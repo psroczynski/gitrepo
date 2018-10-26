@@ -10,7 +10,7 @@ import sqlite3
 
 def kwerenda1(cur):
     cur.execute("""
-        SELECT * FROM uczniowie
+        SELECT nazwisko, imie, egz_hum, egz_mat FROM uczniowie WHERE egz_hum > 40 and egz_mat >40 ORDER BY nazwisko ASC
     """)
     
     wyniki = cur.fetchall()
