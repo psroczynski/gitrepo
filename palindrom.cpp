@@ -1,6 +1,8 @@
 #include <iostream>
+#include <string.h>
 
 using namespace std;
+
 
 int zlicz(char tb[]) {
     int i = 0;
@@ -19,22 +21,17 @@ bool palindrom(char tekst[], int r) {
             break;
         }
     }
-       
-    if (czyPal = true) {
-        cout << "To palindrom";
-        }
-    else {
-        cout << "To nie palindrom";
-        }
     return czyPal;
 }
 
 int main(int argc, char **argv) {
-    int rozmiar = cin.gcount();
+    int rozmiar = 20;
     char tekst[rozmiar];
     cout << "Podaj jakiś wyrazy: ";
     cin.getline(tekst, rozmiar);
-    cout << endl;
-    palindrom(tekst, zlicz(tekst));
+    if (palindrom(tekst, strlen(tekst)))
+        cout << "To palindrom";
+    else 
+        cout << "To nie palindrom";
     return 0;
 }
